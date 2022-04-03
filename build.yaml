@@ -1,0 +1,118 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          any_map: true
+          explicit_to_json: true
+
+      source_gen:combining_builder:
+        enabled: true
+
+      gql_build|schema_builder:
+        enabled: true
+        options:
+          schema: city_weather|lib/src/core/app/data/graphql/schema.graphql
+          exclude:
+            - "**.gr.dart"
+            - "**.config.dart"
+            - "**.data.gql.dart"
+          type_overrides:
+            Upload:
+              name: File
+              import: 'dart:io'
+            Unit:
+              name: String
+            Language:
+              name: String
+
+      gql_build|ast_builder:
+        enabled: true
+        options:
+          schema: city_weather|lib/src/core/app/data/graphql/schema.graphql
+          exclude:
+            - "**.gr.dart"
+            - "**.config.dart"
+            - "**.data.gql.dart"
+          type_overrides:
+            Upload:
+              name: File
+              import: 'dart:io'
+            Unit:
+              name: String
+            Language:
+              name: String
+      gql_build|data_builder:
+        enabled: true
+        options:
+          schema: city_weather|lib/src/core/app/data/graphql/schema.graphql
+          exclude:
+            - "**.gr.dart"
+            - "**.config.dart"
+            - "**.data.gql.dart"
+          type_overrides:
+            Upload:
+              name: File
+              import: 'dart:io'
+            Unit:
+              name: String
+            Language:
+              name: String
+
+      gql_build|var_builder:
+        enabled: true
+        options:
+          schema: city_weather|lib/src/core/app/data/graphql/schema.graphql
+          exclude:
+            - "**.gr.dart"
+            - "**.config.dart"
+            - "**.data.gql.dart"
+          type_overrides:
+            Upload:
+              name: File
+              import: 'dart:io'
+            Unit:
+              name: String
+            Language:
+              name: String
+
+      gql_build|serializer_builder:
+        enabled: true
+        options:
+          schema: city_weather|lib/src/core/app/data/graphql/schema.graphql
+          exclude:
+            - "**.gr.dart"
+            - "**.config.dart"
+            - "**.data.gql.dart"
+          type_overrides:
+            Upload:
+              name: File
+              import: 'dart:io'
+            Unit:
+              name: String
+            Language:
+              name: String
+          custom_serializers:
+            - import: 'package:city_weather/src/core/weather/data/serializers/id_serializer.dart'
+              name: IdSerializer
+            - import: 'package:city_weather/src/core/weather/data/serializers/language_serializer.dart'
+              name: LanguageSerializer
+            - import: 'package:city_weather/src/core/weather/data/serializers/unit_serializer.dart'
+              name: UnitSerializer
+
+      ferry_generator|req_builder:
+        enabled: true
+        options:
+          schema: city_weather|lib/src/core/app/data/graphql/schema.graphql
+          exclude:
+            - "**.gr.dart"
+            - "**.config.dart"
+            - "**.data.gql.dart"
+          type_overrides:
+            Upload:
+              name: File
+              import: 'dart:io'
+            Unit:
+              name: String
+            Language:
+              name: String

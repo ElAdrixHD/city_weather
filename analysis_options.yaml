@@ -1,0 +1,15 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  exclude:
+    - lib/**/*.g.dart
+    - lib/**/*.gql.dart
+    - lib/**/*.config.dart
+    - test/**/*.mocks.dart
+    - lib/**/generated/**/*.dart
+    - lib/res/l10n/**/*.dart
+linter:
+  rules:
+    - unnecessary_parenthesis
+    - prefer_single_quotes
+    - prefer_relative_imports
+    - require_trailing_commas

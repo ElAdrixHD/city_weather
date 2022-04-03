@@ -1,0 +1,7 @@
+#import '/src/core/weather/data/graphql/fragments/city_fragment.graphql'
+
+query GetCityById($id: [String!], $config: ConfigInput){
+    getCityById(id: $id config: $config){
+        ...CityFragment
+    }
+}

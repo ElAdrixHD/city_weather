@@ -1,0 +1,32 @@
+fragment CityFragment on City{
+    id
+    coord {
+        lon
+        lat
+    }
+    country
+    name
+    weather {
+        clouds {
+            all
+            humidity
+            visibility
+        }
+        summary {
+            description
+            icon
+            title
+        }
+        temperature {
+            actual
+            feelsLike
+            max
+            min
+        }
+        timestamp
+        wind {
+            deg
+            speed
+        }
+    }
+}

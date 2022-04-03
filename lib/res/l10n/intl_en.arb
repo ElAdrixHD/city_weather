@@ -1,0 +1,25 @@
+{
+  "wantDarkMode": "Dark mode?",
+  "english": "English",
+  "spanish": "Spanish",
+  "kelvin": "Kelvin",
+  "imperial": "Imperial",
+  "metric": "Metric",
+  "genericError": "An unexpected error has occurred. Sorry for the inconvenience",
+  "notExistingCity" : "Sorry, there isn't a city with that name.",
+  "titleListCity": "List of cities",
+  "temperature" : "Temperature",
+  "actual": "Actual",
+  "min": "Min.temp",
+  "max": "Max.temp",
+  "wind": "Wind",
+  "speed": "Speed",
+  "deg": "Deg",
+  "summary": "Summary",
+  "addCityPageTitle": "Add a city",
+  "hintCity": "City",
+  "notValidCity": "This city doesn't exist",
+  "requiredText": "This field is required",
+  "emptyList": "The list is empty. Try to add one!"
+
+}

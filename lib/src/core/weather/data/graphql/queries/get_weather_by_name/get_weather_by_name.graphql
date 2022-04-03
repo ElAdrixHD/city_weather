@@ -1,0 +1,7 @@
+#import '/src/core/weather/data/graphql/fragments/city_fragment.graphql'
+
+query GetCityByName($name: String!, $country: String $config: ConfigInput){
+    getCityByName(name: $name country: $country config: $config){
+        ...CityFragment
+    }
+}
