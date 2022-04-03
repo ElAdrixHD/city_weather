@@ -21,6 +21,12 @@ class WeatherItem extends StatelessWidget {
     return Dismissible(
       key: Key(city.id),
       onDismissed: (_) => onDismiss(),
+      background: Container(
+        color: Theme.of(context).colorScheme.errorContainer,
+        padding: const EdgeInsets.all(40),
+        alignment: Alignment.centerLeft,
+        child: const Icon(Icons.delete),
+      ),
       direction: DismissDirection.startToEnd,
       child: Card(
         elevation: 16,
