@@ -12,44 +12,46 @@ class AddCityPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(builder: (context, ref, child) {
-      final addCityWatcher = ref.watch(addCityState);
-      return Scaffold(
-        appBar: AppBar(
-          title: Text(S.of(context).addCityPageTitle),
-        ),
-        floatingActionButton: CustomFAB(
-          icon: Icons.save,
-          onTap: () => addCityWatcher.saveForm(),
-        ),
-        body: FormBuilder(
-          key: addCityWatcher.formKey,
-          child: Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FormBuilderTextField(
-                  name: 'city',
-                  decoration: InputDecoration(
-                    hintText: S.of(context).hintCity,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
+    return Consumer(
+      builder: (context, ref, child) {
+        final addCityWatcher = ref.watch(addCityState);
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(S.of(context).addCityPageTitle),
+          ),
+          floatingActionButton: CustomFAB(
+            icon: Icons.save,
+            onTap: () => addCityWatcher.saveForm(),
+          ),
+          body: FormBuilder(
+            key: addCityWatcher.formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FormBuilderTextField(
+                    name: 'city',
+                    decoration: InputDecoration(
+                      hintText: S.of(context).hintCity,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                     ),
+                    validator: FormBuilderValidators.compose([
+                      FormBuilderValidators.required(
+                        context,
+                        errorText: S.of(context).requiredText,
+                      ),
+                    ]),
+                    keyboardType: TextInputType.text,
                   ),
-                  validator: FormBuilderValidators.compose([
-                    FormBuilderValidators.required(
-                      context,
-                      errorText: S.of(context).requiredText,
-                    ),
-                  ]),
-                  keyboardType: TextInputType.text,
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 }
